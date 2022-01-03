@@ -23,7 +23,7 @@ function App() {
           path="/services"
           element={
             <PrivateRoute>
-              <Service />
+              <Service></Service>
             </PrivateRoute>
           }
         ></Route>
