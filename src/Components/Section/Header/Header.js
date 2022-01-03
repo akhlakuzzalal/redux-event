@@ -24,7 +24,12 @@ const Header = () => {
                 Services
               </Nav.Link>
             </Nav>
-            {!users.email ? (
+            {users?.email && <Nav>
+              <Nav.Link as={Link} to="/dashboard">
+                Dashboard
+              </Nav.Link>
+            </Nav>}
+            {!users?.email ? (
               <Nav>
                 <Nav.Link as={Link} to="/login">
                   Login
