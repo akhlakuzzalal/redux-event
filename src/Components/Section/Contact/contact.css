@@ -1,0 +1,21 @@
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #cbcbcb;
+}
+.contact-form input{
+    height: 40px;
+}
+.contact-form textarea {
+    height: 100px;
+}
+.section-bg {
+    background: #efefef;
+}
+.contact-form input[type="submit"] {
+    padding: 0;
+    margin-bottom: 0;
+    background: #7c632d;
+    color: #fff;
+}
