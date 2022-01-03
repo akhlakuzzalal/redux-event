@@ -19,7 +19,7 @@ const Registation = () => {
       <div className="row">
         <div className="col-md-8 offset-md-2">
         <div className="login-part">
-          <h1>Reg Form</h1>
+          <h1>Registration</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <input required placeholder="Enter Your Name" {...register("name")} />
             <input required placeholder="Enter Your Email" {...register("email")} />
