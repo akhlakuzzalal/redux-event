@@ -1,0 +1,10 @@
+li.slide img {
+    height: 550px;
+}
+.thumbs-wrapper.axis-vertical {
+    margin-top: -80px !important;
+    margin-bottom: 0 !important;
+}
+li.thumb img {
+    height: 55px;
+}
