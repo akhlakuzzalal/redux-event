@@ -1,0 +1,11 @@
+.navbar-collapse {
+    flex-grow: inherit;
+}
+.navbar-nav a {
+    padding: 20px 15px !important;
+    font-size: 18px;
+    color: #6e6e6e !important;
+}
+nav.navbar.bg-light {
+    box-shadow: 1px 4px 12px 4px #36363621;
+}
