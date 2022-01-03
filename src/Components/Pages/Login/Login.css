@@ -1,0 +1,28 @@
+.login-page {
+    padding: 80px 0;
+}
+.login-part input {
+    width: 100%;
+    margin-bottom: 16px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #b9b9b9;
+    border-radius: 8px;
+}
+.login-part {
+    box-shadow: 0 0 8px 0 #00000052;
+    padding: 40px 30px;
+    border-radius: 8px;
+}
+.login-part h1 {
+    text-align: center;
+}
+.loginReg {
+    text-align: center;
+}
+.loginReg a{
+    text-decoration: none;
+}
+.login-part input:focus {
+    outline: 0;
+}

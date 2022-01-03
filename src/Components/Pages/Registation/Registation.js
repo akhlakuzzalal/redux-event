@@ -14,23 +14,25 @@ const Registation = () => {
     reset();
   };
   return (
+    <section className="login-page">
     <div className="container">
       <div className="row">
-        <div className="col-8 offset-2">
+        <div className="col-md-8 offset-md-2">
+        <div className="login-part">
           <h1>Reg Form</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input required placeholder="name" {...register("name")} />
-            <input required placeholder="email" {...register("email")} />
+            <input required placeholder="Enter Your Name" {...register("name")} />
+            <input required placeholder="Enter Your Email" {...register("email")} />
             <input
               required
               type="password"
-              placeholder="password"
+              placeholder="Password"
               {...register("password")}
             />
             {isLoading ? (
               <button className="btn btn-primary" type="button" disabled>
                 <span
-                  class="spinner-border spinner-border-sm"
+                  className="spinner-border spinner-border-sm"
                   role="status"
                   aria-hidden="true"
                 ></span>
@@ -45,12 +47,14 @@ const Registation = () => {
             )}
           </form>
           {error && <p className="text-danger">{error}</p>}
-          <p>
+          <p className="loginReg">
             Already Register <Link to="/login">Login</Link>{" "}
           </p>
         </div>
+        </div>
       </div>
     </div>
+    </section>
   );
 };
 
