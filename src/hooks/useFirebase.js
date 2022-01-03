@@ -15,7 +15,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const auth = getAuth();
   // register system
-  const registerEmail = (email, password, name, role) => {
+  const registerEmail = (email, password, name, role, location, navigate) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
@@ -23,6 +23,7 @@ const useFirebase = () => {
         // save data
         saveData(email, name, role);
         setUsers(newUser);
+        navigate(location?.state?.from || "/");
         updateProfile(auth.currentUser, {
           displayName: name,
         })
@@ -39,12 +40,12 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
   // Login
-  const logIn = (email, password) => {
+  const logIn = (email, password, location, navigate) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
-      .then((user) => {
+      .then(() => {
         setError(" ");
-        console.log(user);
+        navigate(location?.state?.from || "/");
       })
       .catch((error) => {
         const errorMessage = error.message;

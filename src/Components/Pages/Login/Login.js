@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../../hooks/useFirebase";
+import { useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm();
   const { logIn, error, isLoading } = useFirebase();
   const onSubmit = (data) => {
     // console.log(data)
-    logIn(data.email, data.password);
+    logIn(data.email, data.password, location, navigate);
     reset();
   };
   return (
