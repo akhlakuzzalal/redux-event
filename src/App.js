@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import Home from "./Components/Pages/Home/Home";
 import Login from "./Components/Pages/Login/Login";
 import NotFound from "./Components/Pages/NotFound/NotFound";
@@ -20,14 +21,14 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Registation />}></Route>
         <Route path="/services" element={<Services />}></Route>
-        {/* <Route
-          path="/services"
+        <Route
+          path="/dashboard"
           element={
             <PrivateRoute>
-              <Service></Service>
+              <Dashboard></Dashboard>
             </PrivateRoute>
           }
-        ></Route> */}
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer></Footer>
