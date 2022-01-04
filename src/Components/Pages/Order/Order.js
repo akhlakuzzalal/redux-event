@@ -18,8 +18,7 @@ const Order = () => {
    }, [id])
    const { register, handleSubmit } = useForm();
    const amountCalc = (person) => {
-      setAmount(person * service.amount)
-      console.log(person)
+      setAmount(person * service.amount);
    }
    const onSubmit = data => {
       const finallData = { ...data, payment: amount, name: users.displayName, email: users.email, id: id, title: service.title };
