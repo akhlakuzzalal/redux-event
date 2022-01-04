@@ -30,8 +30,15 @@ function App() {
         <Route path="/register" element={<Registation />}></Route>
         <Route path="/services" element={<Services />}></Route>
         <Route path="/service/:id" element={<ServiceDetails />}></Route>
-        <Route path="/order/:id" element={<Order />}></Route>
         <Route path="/pay" element={<Pay />}></Route>
+        <Route
+          path="/order/:id"
+            element={
+              <PrivateRoute>
+                <Order></Order>
+              </PrivateRoute>
+            }
+          ></Route>
         <Route
           path="/dashboard"
           element={
