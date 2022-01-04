@@ -11,6 +11,12 @@ export const setOrders = (data) => {
      data: data,
    };
 }
+export const setAllOrders = (data) => {
+   return {
+     type: "SETALLORDER",
+     data: data,
+   };
+}
 
 export const setServices = (data) => {
    return {

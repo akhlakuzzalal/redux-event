@@ -1,9 +1,9 @@
-const order = (state = [], action) => {
+const allOrder = (state = [], action) => {
   switch (action.type) {
-    case "SETORDER":
+    case "SETALLORDER":
       return (state = action.data);
     default:
       return state;
   }
-}
-export default order;
+};
+export default allOrder;

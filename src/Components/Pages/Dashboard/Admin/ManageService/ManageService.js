@@ -43,7 +43,9 @@ const ManageService = () => {
               </td>
               <td>${user.amount}</td>
               <td>
-                <Button variant="danger" onClick={() => handleDelete(user._id)}>Delete</Button>
+                <Button variant="danger" onClick={() => handleDelete(user._id)}>
+                  Delete
+                </Button>
               </td>
             </tr>
           ))}
