@@ -1,4 +1,4 @@
-export const setUser = (data) => {
+export const setUsers = (data) => {
    return {
       type: 'SETUSER',
       data: data
