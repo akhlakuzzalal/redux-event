@@ -23,7 +23,7 @@ reset()}
           {...register("url", { required: false })}
         />
         <input
-          placeholder="Per Person Service"
+          placeholder="Per Person Service Charge"
           type="number"
           {...register("person", { required: true })}
         />
