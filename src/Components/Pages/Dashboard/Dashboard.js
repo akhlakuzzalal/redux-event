@@ -6,7 +6,7 @@ import useFirebase from "../../../hooks/useFirebase";
 const Dashboard = () => {
   const { users, logOut } = useFirebase();
   return (
-    <main className="section-p">
+    <main className="section-sp">
       <section>
         <div className="container">
           <div className="row">
