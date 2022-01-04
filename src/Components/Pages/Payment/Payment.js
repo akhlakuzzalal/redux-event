@@ -11,9 +11,9 @@ import CheckoutForm from "./CheakoutForm";
 // loadStripe is initialized with a fake API key.
 const stripePromise = loadStripe("pk_test_51JygH5GVNFdSlIWRfeUCO0c8Uc8oedk6gpNzRNkbP6wQvFCJwQ9tqEQaY6eOSPQzNDQJeQbGmFjDP0ym4E2pkBOJ00ltgQmsu7");
 
-function Payment({ money }) {
+function Payment({ orderData }) {
    // const { price, _id } = orde
-   const price = 100
+   const price = orderData.payment;
    const [clientSecret, setClientSecret] = useState("");
 
    useEffect(() => {
@@ -39,7 +39,7 @@ function Payment({ money }) {
       <div>
          {clientSecret ? (
             <Elements stripe={stripePromise} options={options}>
-               <CheckoutForm _id={1} price={100} />
+               <CheckoutForm orderData={orderData} clientSecret={clientSecret} />
             </Elements>)
             :
             <>

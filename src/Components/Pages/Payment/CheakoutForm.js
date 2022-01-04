@@ -5,7 +5,7 @@ import {
    useElements,
 } from "@stripe/react-stripe-js";
 
-const CheckoutForm = ({ _id, price }) => {
+const CheckoutForm = ({ orderData, clientSecret }) => {
    const stripe = useStripe();
    const elements = useElements();
 
@@ -16,10 +16,6 @@ const CheckoutForm = ({ _id, price }) => {
       if (!stripe) {
          return;
       }
-
-      const clientSecret = new URLSearchParams(window.location.search).get(
-         "payment_intent_client_secret"
-      );
 
       if (!clientSecret) {
          return;
@@ -56,26 +52,25 @@ const CheckoutForm = ({ _id, price }) => {
          elements,
          confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "http://localhost:3000/dashBoard",
+            return_url: "http://localhost:3000/dashBoard/order",
          },
       },
-         fetch(`https://bike-website-server.herokuapp.com/payment/${_id}`, {
-            method: "PUT",
+      fetch(`http://localhost:5000/order`, {
+            method: "POST",
             headers: {
                "content-type": "application/json"
             },
-            body: JSON.stringify({ price })
+            body: JSON.stringify(orderData)
          })
-            .then(res => res.json())
-            .then(data => console.log(data))
+         .then(res => res.json())
+         .then(data => console.log(data))
       );
-
-
+      
       console.log(error);
       if (error.type === "card_error" || error.type === "validation_error") {
          setMessage(error.message);
       } else {
-         setMessage("An unexpected error occured.");
+         
       }
       setIsLoading(false);
    };
