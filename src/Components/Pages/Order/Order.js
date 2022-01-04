@@ -18,7 +18,7 @@ const Order = () => {
    }
    const onSubmit = data => {
       const finallData = { ...data, payment: amount };
-      console.log(finallData)
+
    };
    console.log(amount.toString())
    return (
