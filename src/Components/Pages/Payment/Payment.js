@@ -14,7 +14,6 @@ const stripePromise = loadStripe("pk_test_51JygH5GVNFdSlIWRfeUCO0c8Uc8oedk6gpNzR
 function Payment({ money }) {
    // const { price, _id } = orde
    const price = 100
-   console.log(price)
    const [clientSecret, setClientSecret] = useState("");
 
    useEffect(() => {
@@ -44,7 +43,7 @@ function Payment({ money }) {
             </Elements>)
             :
             <>
-               <h2>Loading ...... </h2>
+               <h2 className="text-center">Loading ...... </h2>
             </>
             // <CircularProgress></CircularProgress>
          }
