@@ -17,7 +17,6 @@ import Profile from './Components/Pages/Dashboard/Customer/Profile/Profile'
 import MyOrder from './Components/Pages/Dashboard/Customer/MyOrder/OrderList'
 function App() {
   return (
-    // <AuthProvider>
     <BrowserRouter>
       <Header></Header>
       <Routes>
@@ -63,7 +62,6 @@ function App() {
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
-    // </AuthProvider>
   );
 }
 
