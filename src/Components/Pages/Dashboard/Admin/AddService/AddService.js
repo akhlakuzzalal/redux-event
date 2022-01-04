@@ -7,8 +7,22 @@ const AddService = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) =>{ console.log(data)
-reset()}
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/service", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert("Data added successfully");
+          reset();
+        }
+      });
+  };
   return (
     <div className="containter">
       <h1>Add Product</h1>
@@ -20,12 +34,12 @@ reset()}
         />
         <input
           placeholder="Image Url"
-          {...register("url", { required: false })}
+          {...register("url", { required: true })}
         />
         <input
           placeholder="Per Person Service Charge"
           type="number"
-          {...register("person", { required: true })}
+          {...register("amount", { required: true })}
         />
         {errors.exampleRequired && (
           <span className="text-danger">This field is required</span>
