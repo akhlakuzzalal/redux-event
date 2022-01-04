@@ -1,10 +1,11 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import users from './users'
-import services from './servicesState'
-
+import users from "./users";
+import services from "./servicesState";
+import order from "./orderState";
 const allReducer = combineReducers({
-   users,
-   services
-})
+  users,
+  services,
+  order,
+});
 
-export default allReducer
+export default allReducer;

@@ -5,6 +5,13 @@ export const setUsers = (data) => {
    }
 }
 
+export const setOrders = (data) => {
+   return {
+     type: "SETORDER",
+     data: data,
+   };
+}
+
 export const setServices = (data) => {
    return {
       type: 'SETSERVICES',
