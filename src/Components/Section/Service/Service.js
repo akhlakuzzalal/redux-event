@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
-import { Card } from 'react-bootstrap';
 import './Service.css';
-import image from './../../../images/event-1.jpg';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setServices } from '../../../action/index.action';
@@ -16,7 +13,6 @@ const Service = () => {
             .then(res => res.json())
             .then(data => dispatch(setServices(data)))
     }, [])
-    console.log(services)
     return (
         <section className='section-sp'>
             <div className="container">

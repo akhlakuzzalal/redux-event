@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
+import './Order.css';
 
 const Order = () => {
    const [service, setService] = useState([]);
    const [amount, setAmount] = useState(0);
+   const {users} = useFirebase();
+   const navigate = useNavigate();
    const { id } = useParams();
+
    useEffect(() => {
       fetch(`http://localhost:5000/service/${id}`)
          .then(res => res.json())
@@ -17,23 +22,35 @@ const Order = () => {
       console.log(person)
    }
    const onSubmit = data => {
-      const finallData = { ...data, payment: amount };
-
+      const finallData = { ...data, payment: amount, name: users.displayName, email: users.email, id: id, title: service.title };
+      localStorage.setItem('order', JSON.stringify(finallData));
+      navigate('/pay');
    };
-   console.log(amount.toString())
    return (
-      <div>
-         <h2>Order for {id}</h2>
+      <section className='section-sp'>
+         <div className="container">
          <form onSubmit={handleSubmit(onSubmit)}>
-            <input  {...register("name")} placeholder='Name' />
-            <input {...register("email")} placeholder='Email' />
-            <input {...register("phone")} placeholder='Phone Number' />
-            <input {...register("date")} placeholder='Event Date' />
-            <input onKeyUp={(e) => amountCalc(e.target.value)} {...register("person")} placeholder='Totall person' />
-            <p>{amount}</p>
-            <input type="submit" value={'Pay Now'} />
-         </form>
-      </div>
+            <div className="row">
+               <div className="col-md-8">
+                 <div className="order-form">
+                     <h2>{service.title}</h2>
+                     <input value={users.displayName} disabled/>
+                     <input value={users.email} disabled/>
+                     <input type='number' {...register("phone")} required placeholder='Phone Number' />
+                     <input type='date' {...register("date")} required placeholder='Event Date' />
+                     <input onKeyUp={(e) => amountCalc(e.target.value)} {...register("person")} placeholder='Total Person' required />
+                 </div>
+               </div>
+               <div className="col-md-4">
+                  <div className="order-part">
+                     <p>Total Amount: ${amount}</p>
+                     <input type="submit" value={'Pay Now'} />
+                  </div>
+               </div>
+            </div>
+            </form>
+         </div>
+      </section>
    );
 };
 
