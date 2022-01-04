@@ -1,10 +1,22 @@
-import React from 'react';
-import {  Card } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Card } from 'react-bootstrap';
 import './Service.css';
 import image from './../../../images/event-1.jpg';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { setServices } from '../../../action/index.action';
+import ServicePart from './ServicePart';
 
 const Service = () => {
+    const dispatch = useDispatch()
+    const services = useSelector(state => state.services)
+    useEffect(() => {
+        fetch('http://localhost:5000/service')
+            .then(res => res.json())
+            .then(data => dispatch(setServices(data)))
+    }, [])
+    console.log(services)
     return (
         <section className='section-sp'>
             <div className="container">
@@ -16,108 +28,9 @@ const Service = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-4">
-                        <div className="service-single mb-30">
-                            <Card>
-                                <div className="service-image">
-                                    <Card.Img variant="top" src={image} />
-                                </div>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </Card.Text>
-                                    <Link to="#">Details</Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="service-single mb-30">
-                            <Card>
-                                <div className="service-image">
-                                    <Card.Img variant="top" src={image} />
-                                </div>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </Card.Text>
-                                    <Link to="#">Details</Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="service-single mb-30">
-                            <Card>
-                                <div className="service-image">
-                                    <Card.Img variant="top" src={image} />
-                                </div>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </Card.Text>
-                                    <Link to="#">Details</Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="service-single mb-30">
-                            <Card>
-                                <div className="service-image">
-                                    <Card.Img variant="top" src={image} />
-                                </div>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </Card.Text>
-                                    <Link to="#">Details</Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="service-single mb-30">
-                            <Card>
-                                <div className="service-image">
-                                    <Card.Img variant="top" src={image} />
-                                </div>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </Card.Text>
-                                    <Link to="#">Details</Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="service-single mb-30">
-                            <Card>
-                                <div className="service-image">
-                                    <Card.Img variant="top" src={image} />
-                                </div>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
-                                    </Card.Text>
-                                    <Link to="#">Details</Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </div>
+                    {
+                        services.slice(0, 6).map(service => <ServicePart key={service._id} service={service}></ServicePart>)
+                    }
                 </div>
             </div>
         </section>
