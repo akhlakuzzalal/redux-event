@@ -6,7 +6,6 @@ import { setOrders } from "../../../../../action/index.action";
 const ManageService = () => {
   const dispatch = useDispatch();
   const order = useSelector((state) => state.order);
-  console.log(order);
   useEffect(() => {
     fetch("http://localhost:5000/service")
       .then((res) => res.json())
@@ -44,7 +43,9 @@ const ManageService = () => {
               </td>
               <td>${user.amount}</td>
               <td>
-                <Button variant="danger" onClick={() => handleDelete(user._id)}>Delete</Button>
+                <Button variant="danger" onClick={() => handleDelete(user._id)}>
+                  Delete
+                </Button>
               </td>
             </tr>
           ))}
