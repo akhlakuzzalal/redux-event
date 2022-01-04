@@ -9,7 +9,7 @@ const AddService = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/service", {
+    fetch("https://limitless-dusk-46203.herokuapp.com/service", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

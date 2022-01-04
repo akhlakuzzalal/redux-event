@@ -8,7 +8,7 @@ const UserList = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://limitless-dusk-46203.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => dispatch(setUsers(data)));
   }, [users]);
@@ -16,7 +16,7 @@ const UserList = () => {
   /*const handleDelete = (id) => {
     const confirmation = window.confirm("Are you sure for delete this user??");
     if (confirmation) {
-      fetch(`http://localhost:5000/user/${id}`, {
+      fetch(`https://limitless-dusk-46203.herokuapp.com/user/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

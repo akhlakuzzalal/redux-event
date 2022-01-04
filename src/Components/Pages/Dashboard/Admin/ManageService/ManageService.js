@@ -7,14 +7,14 @@ const ManageService = () => {
   const dispatch = useDispatch();
   const order = useSelector((state) => state.order);
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://limitless-dusk-46203.herokuapp.com/service")
       .then((res) => res.json())
       .then((data) => dispatch(setOrders(data)));
   }, [order]);
   const handleDelete = (id) => {
     const confirmation = window.confirm("Are you sure for delete this user??");
     if (confirmation) {
-      fetch(`http://localhost:5000/service/${id}`, {
+      fetch(`https://limitless-dusk-46203.herokuapp.com/service/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

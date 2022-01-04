@@ -82,7 +82,7 @@ const useFirebase = () => {
   // save database
   const saveData = (email, displayName, role) => {
     const user = { email, displayName, role };
-    fetch("http://localhost:5000/user", {
+    fetch("https://limitless-dusk-46203.herokuapp.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

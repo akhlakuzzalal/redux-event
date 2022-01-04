@@ -9,7 +9,7 @@ const Service = () => {
     const dispatch = useDispatch()
     const services = useSelector(state => state.services)
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://limitless-dusk-46203.herokuapp.com/service')
             .then(res => res.json())
             .then(data => dispatch(setServices(data)))
     }, [])

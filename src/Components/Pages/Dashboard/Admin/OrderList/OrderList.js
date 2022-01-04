@@ -6,14 +6,14 @@ const OrderList = () => {
   const dispatch = useDispatch();
   const allorder = useSelector((state) => state.allOrder);
   useEffect(() => {
-    fetch("http://localhost:5000/order")
+    fetch("https://limitless-dusk-46203.herokuapp.com/order")
       .then((res) => res.json())
       .then((data) => dispatch(setAllOrders(data)));
   }, [allorder]);
   const handleDelete = (id) => {
     const confirmation = window.confirm("Are you sure for delete this user??");
     if (confirmation) {
-      fetch(`http://localhost:5000/order/${id}`, {
+      fetch(`https://limitless-dusk-46203.herokuapp.com/order/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

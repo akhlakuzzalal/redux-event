@@ -5,7 +5,7 @@ const OrderList = () => {
   const [user, setUser] = useState([]);
   const {users} = useFirebase()
   useEffect(() => {
-    fetch(`http://localhost:5000/order?email=${users.email}`)
+    fetch(`https://limitless-dusk-46203.herokuapp.com/order?email=${users.email}`)
     .then(res=>res.json())
     .then(data=>setUser(data))
   },[user.email]);

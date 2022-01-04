@@ -52,10 +52,10 @@ const CheckoutForm = ({ orderData, clientSecret }) => {
          elements,
          confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "http://localhost:3000/dashBoard/myorder",
+            return_url: "/dashBoard/myorder",
          },
       },
-      fetch(`http://localhost:5000/order`, {
+      fetch(`https://limitless-dusk-46203.herokuapp.com/order`, {
             method: "POST",
             headers: {
                "content-type": "application/json"
