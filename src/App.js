@@ -15,6 +15,8 @@ import Footer from "./Components/Section/Footer/Footer";
 import Header from "./Components/Section/Header/Header";
 import Profile from './Components/Pages/Dashboard/Customer/Profile/Profile';
 import MyOrder from './Components/Pages/Dashboard/Customer/MyOrder/OrderList';
+import ServiceDetails from "./Components/Pages/ServiceDetails/ServiceDetails";
+import Order from "./Components/Pages/Order/Order";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +27,8 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Registation />}></Route>
         <Route path="/services" element={<Services />}></Route>
+        <Route path="/service/:id" element={<ServiceDetails />}></Route>
+        <Route path="/order/:id" element={<Order />}></Route>
         <Route
           path="/dashboard"
           element={

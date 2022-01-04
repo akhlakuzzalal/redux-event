@@ -4,3 +4,10 @@ export const setUsers = (data) => {
       data: data
    }
 }
+
+export const setServices = (data) => {
+   return {
+      type: 'SETSERVICES',
+      data: data
+   }
+}
