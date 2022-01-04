@@ -16,7 +16,6 @@ const Service = () => {
             .then(res => res.json())
             .then(data => dispatch(setServices(data)))
     }, [])
-    console.log(services)
     return (
         <section className='section-sp'>
             <div className="container">
