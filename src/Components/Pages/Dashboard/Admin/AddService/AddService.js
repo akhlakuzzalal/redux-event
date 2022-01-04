@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import './AddService.css';
 const AddService = () => {
   const {
     register,
@@ -24,8 +25,8 @@ const AddService = () => {
       });
   };
   return (
-    <div className="containter">
-      <h1>Add Product</h1>
+    <div className="add-service">
+      <h1>Add Service</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder="Title" {...register("title", { required: true })} />
         <textarea
