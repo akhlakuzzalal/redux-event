@@ -13,8 +13,8 @@ import Services from "./Components/Pages/Services/Services";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Footer from "./Components/Section/Footer/Footer";
 import Header from "./Components/Section/Header/Header";
-import Profile from './Components/Pages/Dashboard/Customer/Profile/Profile'
-import MyOrder from './Components/Pages/Dashboard/Customer/MyOrder/OrderList'
+import Profile from './Components/Pages/Dashboard/Customer/Profile/Profile';
+import MyOrder from './Components/Pages/Dashboard/Customer/MyOrder/OrderList';
 function App() {
   return (
     <BrowserRouter>
