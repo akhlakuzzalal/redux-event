@@ -6,6 +6,7 @@ import OrderList from "./Components/Pages/Dashboard/Admin/OrderList/OrderList";
 import UserList from "./Components/Pages/Dashboard/Admin/UserList/UserList";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import Home from "./Components/Pages/Home/Home";
+import AdminRote from "./Components/Pages/Dashboard/AdminRoute/AdminRote";
 import Login from "./Components/Pages/Login/Login";
 import NotFound from "./Components/Pages/NotFound/NotFound";
 import Registation from "./Components/Pages/Registation/Registation";
@@ -13,8 +14,8 @@ import Services from "./Components/Pages/Services/Services";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Footer from "./Components/Section/Footer/Footer";
 import Header from "./Components/Section/Header/Header";
-import Profile from './Components/Pages/Dashboard/Customer/Profile/Profile';
-import MyOrder from './Components/Pages/Dashboard/Customer/MyOrder/OrderList';
+import Profile from "./Components/Pages/Dashboard/Customer/Profile/Profile";
+import MyOrder from "./Components/Pages/Dashboard/Customer/MyOrder/OrderList";
 import ServiceDetails from "./Components/Pages/ServiceDetails/ServiceDetails";
 import Order from "./Components/Pages/Order/Order";
 function App() {
@@ -39,19 +40,35 @@ function App() {
         >
           <Route
             path="/dashboard/userlist"
-            element={<UserList></UserList>}
+            element={
+              <AdminRote>
+                <UserList></UserList>
+              </AdminRote>
+            }
           ></Route>
           <Route
             path="/dashboard/orderlist"
-            element={<OrderList></OrderList>}
+            element={
+              <AdminRote>
+                <OrderList></OrderList>
+              </AdminRote>
+            }
           ></Route>
           <Route
             path="/dashboard/addservice"
-            element={<AddService></AddService>}
+            element={
+              <AdminRote>
+                <AddService></AddService>
+              </AdminRote>
+            }
           ></Route>
           <Route
             path="/dashboard/manageservice"
-            element={<ManageService></ManageService>}
+            element={
+              <AdminRote>
+                <ManageService></ManageService>
+              </AdminRote>
+            }
           ></Route>
           <Route
             path="/dashboard/profilemanage"
