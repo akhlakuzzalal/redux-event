@@ -18,6 +18,7 @@ import Profile from "./Components/Pages/Dashboard/Customer/Profile/Profile";
 import MyOrder from "./Components/Pages/Dashboard/Customer/MyOrder/OrderList";
 import ServiceDetails from "./Components/Pages/ServiceDetails/ServiceDetails";
 import Order from "./Components/Pages/Order/Order";
+import Pay from "./Components/Pages/Payment/Pay";
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +31,7 @@ function App() {
         <Route path="/services" element={<Services />}></Route>
         <Route path="/service/:id" element={<ServiceDetails />}></Route>
         <Route path="/order/:id" element={<Order />}></Route>
+        <Route path="/pay" element={<Pay />}></Route>
         <Route
           path="/dashboard"
           element={
