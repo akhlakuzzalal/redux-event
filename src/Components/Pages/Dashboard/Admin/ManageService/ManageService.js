@@ -6,7 +6,6 @@ import { setOrders } from "../../../../../action/index.action";
 const ManageService = () => {
   const dispatch = useDispatch();
   const order = useSelector((state) => state.order);
-  console.log(order);
   useEffect(() => {
     fetch("http://localhost:5000/service")
       .then((res) => res.json())

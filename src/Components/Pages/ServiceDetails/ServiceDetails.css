@@ -1,0 +1,19 @@
+.service-details img {
+    width: 150px;
+}
+.order-part {
+    padding: 30px;
+    background: #ebebeb;
+    border-radius: 8px;
+    position: sticky;
+    top: 20px;
+}
+.order-part a {
+    background: #f0797b;
+    padding: 16px 30px;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+}
